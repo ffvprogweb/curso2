@@ -1,4 +1,5 @@
-sequenceDiagram
+```mermaid
+ sequenceDiagram
     participant browser
     participant server
 
@@ -26,6 +27,11 @@ sequenceDiagram
 
     Note right of browser: O navegador executa a função callback (função de retorno de chamada) que renderiza as notas
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+
+ browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
     server-->>browser: HTML document
     deactivate server
